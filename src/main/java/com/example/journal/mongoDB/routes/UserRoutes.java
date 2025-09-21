@@ -39,4 +39,14 @@ public class UserRoutes {
     public User getEntryById(@PathVariable ObjectId id ){
        return userController.getUserById(id).orElse(null) ;
     }
+
+     @PostMapping("/register")
+     public ResponseEntity<?> registerUser(@RequestBody User user) {
+        return userController.register(user) ;
+     }
+
+     @PostMapping("/login")
+     public ResponseEntity<?> loginUser (@RequestBody User user) {
+        return userController.login(user) ;
+     }
 }

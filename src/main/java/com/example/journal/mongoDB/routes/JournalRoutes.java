@@ -25,18 +25,18 @@ public class JournalRoutes {
 
     @Autowired
     private JournalController journalController ;
-    @Autowired
-    private UserController userController ;
+    // @Autowired
+    // private UserController userController ;
     
-    @GetMapping("username/{userName}")
-    public ResponseEntity<?> getAllJourbEntriesOfUser(@PathVariable String userName){
-       User user = userController.getUserByUserName(userName) ;
-       List<JournalEntry> all = user.getJournalEntries() ;
-       if(all != null && !all.isEmpty()){
-        return new ResponseEntity<>(all , HttpStatus.OK) ;
-       }
-       return new ResponseEntity<>(HttpStatus.NOT_FOUND) ;
-    }
+    // @GetMapping("username/{userName}")
+    // public ResponseEntity<?> getAllJourbEntriesOfUser(@PathVariable String userName){
+    //    User user = userController.getUserByUserName(userName) ;
+    //    List<JournalEntry> all = user.getJournalEntries() ;
+    //    if(all != null && !all.isEmpty()){
+    //     return new ResponseEntity<>(all , HttpStatus.OK) ;
+    //    }
+    //    return new ResponseEntity<>(HttpStatus.NOT_FOUND) ;
+    // }
 
     @PostMapping("")
     public boolean makeEntry(@RequestBody JournalEntry entry){
